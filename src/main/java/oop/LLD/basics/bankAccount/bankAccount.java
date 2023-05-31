@@ -1,16 +1,31 @@
-package oop.LLD.basics;
+package oop.LLD.basics.bankAccount;
 
 public class bankAccount {
     private Integer number;
     private String name;
     private Integer balance;
 
-    public bankAccount(Integer number, String name, Integer balance){
-        this.number = number;
-        this.name = name;
-        this.balance = balance;
+    // public bankAccount(Integer number, String name, Integer balance){
+    //     this.number = number;
+    //     this.name = name;
+    //     this.balance = balance;
+    // }
+
+    public static void main(String[] args){
+        bankAccount Alice = new bankAccount();
+        Alice.setBalance(1000);
+        Alice.setName("Alice");
+        Alice.setNumber(2);
+    
+        bankAccount Bob = new bankAccount();
+        Bob.setBalance(5000);
+        Bob.setName("Bob");
+        Bob.setNumber(1);
+    
+        Alice.transfer(100, Bob);
+        System.out.println(Alice.getBalance());
     }
-}
+
 
 // Getter Setters
 
@@ -50,4 +65,5 @@ public void withdraw(Integer amount) {
 public void transfer(Integer amount, bankAccount destination) {
     this.withdraw(amount);
     destination.deposit(amount);
+}
 }
