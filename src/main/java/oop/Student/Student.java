@@ -5,11 +5,15 @@ public class Student {
     private String email;
     private String batchName;
     private Integer score;
+    private StudentStatus status = StudentStatus.ACTIVE; // ACTIVE, PAUSED, COMPLETED
 
     // Define Constructor
     public Student(String name, String email, String batchName, Integer score){
         this.name = name;
         this.batchName = batchName;
+        if (score < 0 || score > 100){
+            throw new RuntimeException("invalid score!!!");
+        }
         this.score = score;
         this.email = email;
     }
@@ -48,6 +52,10 @@ public class Student {
 
     public void setScore(Integer score){
         this.score = score;
+    }
+
+    public StudentStatus getStatus(){
+        return this.status;
     }
 
 }

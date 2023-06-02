@@ -18,7 +18,13 @@ public class StudentTest {
         student.setEmail("mariner@gmail.com");
 
         assertEquals("If name is passed to ctor, the instance should have the same name", "Shreyas", student.getName());
+
+        assertEquals("If no status is passed, default is ACTIVE", StudentStatus.ACTIVE, student.getStatus());
     }
 
-    
+    @Test(expected = RuntimeException.class)
+    public void testScoreValidation(){
+        Student student = new Student("Shreyas", "mariner@gmail.com", "Batch1", 200);
+        assertNotNull("If constructor is called, then object must be returned", student);
+    }
 }
