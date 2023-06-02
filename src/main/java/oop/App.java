@@ -23,6 +23,9 @@ public class App
         users.add(student);
         users.add(mentor);
         resetEmail(users);
+        student.printInfo(); //Inheritence
+        student.printInfo("Mr."); // polymorphism  --> method overloading
+        student.printInfo("Mr.", 10); // another valid method overloading
     }
 
     public static void resetEmail(List<User> users){

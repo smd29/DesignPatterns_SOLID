@@ -14,4 +14,16 @@ public class User {
     public void changeEmail(String email){
         this.email = email;
     }
+
+    public void printInfo(){
+        System.out.println("User: " + this.getName() + " " + this.getEmail());
+    }
+
+    public void printInfo(String salutation){
+        System.out.println("User: " + salutation + " " + this.getName());
+    }
+
+    public void printInfo(String salutation, Integer roll_no){
+        System.out.println("User: " + salutation + " " + this.getName() + " Roll: " + roll_no);
+    }
 }
