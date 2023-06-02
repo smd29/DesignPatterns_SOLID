@@ -1,4 +1,4 @@
-package oop.LLD.basics.bankAccount;
+package oop.BankAccount.basics.bankAccount;
 
 public class bankAccount {
     private Integer number;
@@ -66,4 +66,5 @@ public void transfer(Integer amount, bankAccount destination) {
     this.withdraw(amount);
     destination.deposit(amount);
 }
+
 }
