@@ -31,6 +31,14 @@ public class App
             System.out.println(user.getEmail());
             user.changeEmail("null@gmail.com");
             System.out.println(user.getEmail());
+
+            if (user instanceof Student){
+                Student student = (Student) user;
+                System.out.println("Before Score is: " + student.getScore());
+                student.setScore(0);
+                System.out.println("After Score is: " + student.getScore());
+
+            }
         }
         
     }
