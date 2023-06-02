@@ -15,6 +15,7 @@ public class User {
         this.email = email;
     }
 
+    // Method overloading
     public void printInfo(){
         System.out.println("User: " + this.getName() + " " + this.getEmail());
     }

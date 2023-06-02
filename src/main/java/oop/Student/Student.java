@@ -26,4 +26,9 @@ public class Student extends User {
         this.batchName = batchName;
     }
 
+    @Override
+    public void printInfo(){
+        System.out.println("Student: " + getName() + " " + getBatchName());
+    }
+
 }
