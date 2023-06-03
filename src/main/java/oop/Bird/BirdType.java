@@ -1,5 +1,5 @@
 package oop.Bird;
 
 public enum BirdType {
-    Penguin, Parrot, Sparrow
+    Penguin, Parrot, Sparrow, Dove
 }
