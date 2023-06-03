@@ -9,6 +9,9 @@ public class Runner {
         Flyable sparrow = new Sparrow(100, "Red", "small", "bT", BirdType.Sparrow);
         sparrow.fly();
 
+        Flyable parrot = new Parrot(100, "Red", "small", "bT", BirdType.Parrot);
+        parrot.fly();
+
          Swimmable penguin = new Penguin(100, "Black", "Big", "Ok", BirdType.Penguin);
          penguin.swim();
 
