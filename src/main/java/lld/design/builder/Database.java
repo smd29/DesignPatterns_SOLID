@@ -63,6 +63,7 @@ public class Database {
             database.host = this.host;
             database.port = this.port;
             database.password = this.password;
+            database.type = this.type;
 
             return database;
         }
