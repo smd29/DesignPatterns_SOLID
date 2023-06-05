@@ -17,4 +17,14 @@ public class DatabaseTest {
         assertEquals("If instance is returned, then password should match the input", "Pass", database.getPassword());
         
     }
+
+    @Test
+    public void testNewBuilderMethod(){
+        NewDatabase database = NewDatabase.builder().host("host").port(1000).password("NewPass").type(DatabaseType.MYSQL).build();
+
+
+        assertNotNull("If builder is called, instance shouldn't be null", database);
+        assertEquals("If instance is returned, then password should match the input", "NewPass", database.getPassword());
+        
+    }
 }
