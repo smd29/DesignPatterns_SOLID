@@ -1,5 +1,7 @@
 package lld.design.builder;
 
+import javax.management.RuntimeErrorException;
+
 import lombok.Getter;
 
 @Getter
@@ -53,6 +55,9 @@ public class Database {
 
         // Step 5: Create build method
         public Database build(){
+            if (!isValid()){
+                throw new RuntimeException("Invalid name");
+            }
             Database database = new Database();
             database.name = this.name;
             database.host = this.host;
@@ -60,6 +65,14 @@ public class Database {
             database.password = this.password;
 
             return database;
+        }
+
+        // Validate
+        public Boolean isValid(){
+            if (name != null){
+                return true;
+            }
+            return false;
         }
 
     }
