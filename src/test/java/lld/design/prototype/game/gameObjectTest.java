@@ -16,7 +16,7 @@ public class gameObjectTest {
     @Test
     public void testClone(){
         // Step 4: Create a prototype
-        BackgroundObject prototype = new BackgroundObject(10, 12, 15, BackgroundObjectType.ROAD);
+        BackgroundObject prototype = new BackgroundObject(10, 12, 15, BackgroundObjectType.FORE_GROUND);
         BackgroundObject clone = prototype.clone();
 
         assertNotNull("If prototype is called, clone shouldn't be null", clone);
@@ -30,10 +30,10 @@ public class gameObjectTest {
 
     @Test
     public void testRegistry(){
-        BackgroundObject prototype = new BackgroundObject(10, 12, 15, BackgroundObjectType.ROAD);
+        BackgroundObject prototype = new BackgroundObject(10, 12, 15, BackgroundObjectType.FORE_GROUND);
         registry.addPrototype(prototype.getType(), prototype);
 
-        BackgroundObject clone = registry.getPrototype(BackgroundObjectType.ROAD).clone();
+        BackgroundObject clone = registry.getPrototype(BackgroundObjectType.FORE_GROUND).clone();
         
         assertNotNull("If prototype is called, clone shouldn't be null", clone);
     }

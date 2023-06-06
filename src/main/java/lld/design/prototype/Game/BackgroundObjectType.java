@@ -1,5 +1,5 @@
 package lld.design.prototype.Game;
 
 public enum BackgroundObjectType {
-    TREE, BUILDING, ROAD
+    FORE_GROUND, BACK_GROUND
 }
