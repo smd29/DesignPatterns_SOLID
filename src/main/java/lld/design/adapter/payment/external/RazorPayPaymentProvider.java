@@ -10,10 +10,18 @@ public class RazorPayPaymentProvider implements PaymentProvider{
         return api.generateLink();
     }
 
+    // @Override
+    // public String pay(PaymentRequest request) {
+    //     return api.makePayment(request.getAmount(), request.getEmail());
+    // }
+
     @Override
-    public String pay(PaymentRequest request) {
-        return api.makePayment(request.getAmount(), request.getEmail());
+    public String pay(PaymentRequest request){
+        String id = api.prePay(request.getAmount(), request.getEmail());
+        api.postpay(id);
+        return id;
     }
+    
 
     @Override
     public PaymentStatus status(String paymentId) {
