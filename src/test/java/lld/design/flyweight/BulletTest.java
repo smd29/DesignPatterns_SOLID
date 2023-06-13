@@ -2,6 +2,7 @@ package lld.design.flyweight;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import lld.design.prototype.Game.BackgroundObjectType;
@@ -9,6 +10,13 @@ import lld.design.prototype.Game.GraphicalObject;
 
 public class BulletTest {
     
+    FlyweightRegistry<BulletType, Bullet> flyweightRegistry;
+
+    @Before
+    public void setUp(){
+        flyweightRegistry = new FlyweightRegistry<>();
+    }
+
     @Test
     public void testFlyweight(){
         // Create flyweight object
@@ -21,7 +29,14 @@ public class BulletTest {
 
     @Test
     public void registry(){
-        FlyweightRegistry<BulletType, Bullet> flyweightRegistry = new FlyweightRegistry<>();
-        FlyweightRegistry<BackgroundObjectType, GraphicalObject> flyweightRegistry2 = new FlyweightRegistry<>();
+        Bullet bullet = new Bullet(BulletType.BULLET_45MM, new byte[100], 100.0, "Grey");
+        flyweightRegistry.add(BulletType.BULLET_45MM, bullet);
+        FlyingBullet flyingBullet = FlyingBullet.builder()
+                                    .angle(200.0).bullet(bullet)
+                                    .build();
+        Bullet bullet2 = flyweightRegistry.get(BulletType.BULLET_45MM);
+        FlyingBullet flyingBullet2 = FlyingBullet.builder()
+                                    .angle(200.0).bullet(bullet2)
+                                    .build();
     }
 }
